@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Vuelos | Ops Center</title>
+    <link rel="stylesheet" href="../style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --border-ui: rgba(255, 255, 255, 0.1);
+            --accent: #ff385c;
+            --accent-glow: rgba(255, 56, 92, 0.3);
+            --text-dim: #94a3b8;
+        }
+
+        .workflow-container { max-width: 1000px; margin: auto; }
+        
+        .step-block { 
+            background: var(--bg-card); 
+            border: 1px solid var(--border-ui); 
+            border-radius: 16px; 
+            margin-bottom: 25px; 
+            overflow: hidden; 
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .step-block:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        
+        .step-header { 
+            background: rgba(255,255,255,0.03); 
+            padding: 20px 30px; 
+            display: flex; 
+            align-items: center; 
+            gap: 20px; 
+            border-bottom: 1px solid var(--border-ui); 
+        }
+
+        .step-number { 
+            background: var(--accent); 
+            color: #fff; 
+            min-width: 40px; 
+            height: 40px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-weight: 800; 
+            box-shadow: 0 0 15px var(--accent-glow); 
+        }
+
+        .step-content { padding: 30px; }
+
+        /* GDS Grid System */
+        .system-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 15px; 
+            margin-top: 25px; 
+        }
+
+        .system-link { text-decoration: none; color: inherit; }
+        
+        .system-card { 
+            background: rgba(15, 23, 42, 0.6); 
+            padding: 20px; 
+            border-radius: 12px; 
+            text-align: center; 
+            border: 1px solid var(--border-ui); 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .system-card:hover { 
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        }
+
+        .system-card h4 { margin-bottom: 5px; color: #fff; font-size: 1.1rem; }
+        .system-card small { font-size: 0.75rem; color: var(--text-dim); line-height: 1.4; display: block; }
+
+        /* Colores GDS */
+        .sc-galileo { border-top: 3px solid #3498db; }
+        .sc-amadeus { border-top: 3px solid #2ecc71; }
+        .sc-ndc { border-top: 3px solid #f1c40f; }
+        .sc-starlings { border-top: 3px solid #e67e22; }
+
+        /* Cobro Section */
+        .cobro-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 25px; }
+        .cobro-box { 
+            padding: 25px; 
+            border-radius: 12px; 
+            background: rgba(0, 0, 0, 0.2); 
+            border: 1px solid var(--border-ui);
+            position: relative;
+        }
+
+        .badge-info { 
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--accent); 
+            color: white; 
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-size: 0.7rem; 
+            font-weight: 800; 
+            letter-spacing: 0.5px;
+        }
+
+        .btn-ae { 
+            display: inline-flex;
+            align-items: center;
+            background: var(--accent); 
+            color: white; 
+            padding: 12px 28px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            margin-top: 20px;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .info-nota {
+            background: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 768px) {
+            .cobro-split { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="inner-page">
+
+<header>
+    <div class="header-content">
+        <h1>Atrápalo <span class="sub-logo">| Gestión de Vuelos</span></h1>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="gestion-pedidos.html">📦 Volver a Gestión de Pedidos</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<main class="section-padding">
+    <div class="section-title">
+        <h2>Protocolo Operativo Principal</h2>
+        <p>Garantice la integridad de la reserva siguiendo el flujo validado por el departamento de Vuelos.</p>
+    </div>
+
+    <div class="workflow-container">
+        
+        <div class="step-block" style="border-left: 4px solid #ff385c;">
+            <div class="step-header">
+                <div class="step-number">01</div>
+                <h3>Análisis de Riesgo (AE)</h3>
+            </div>
+            <div class="step-content">
+                <p><strong>Filtro Mandatorio:</strong> No se permite la interacción con proveedores sin un scoring de fraude aprobado.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                    <div style="background: rgba(255,255,255,0.02); padding: 15px; border-radius: 8px;">
+                        <small style="color: var(--accent); font-weight: bold;">Checklist Antiestafa:</small>
+                        <ul class="member-list" style="font-size: 0.85rem; margin-top: 10px;">
+                            <li>Verificar Alertas Rojas en panel AE.</li>
+                            <li>Coincidencia Titular vs Pasajero.</li>
+                            <li>Validar historial de compras previas.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="antiestafa.html" class="btn-ae">Manual de Seguridad 🛡️</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="step-block">
+            <div class="step-header">
+                <div class="step-number">02</div>
+                <h3>Verificación en GDS / Sistema</h3>
+            </div>
+            <div class="step-content">
+                <p>Elija el sistema donde vamos a realizar la gestión</p>
+                
+                <div class="system-grid">
+                    <a href="galileo.html" class="system-link">
+                        <div class="system-card sc-galileo">
+                            <h4>Galileo</h4>
+                            <small>Smartpoint Travelport</small>
+                        </div>
+                    </a>
+                    <a href="amadeus.html" class="system-link">
+                        <div class="system-card sc-amadeus">
+                            <h4>Amadeus</h4>
+                            <small>OIDs / TST Management</small>
+                        </div>
+                    </a>
+                    <a href="sistemas-ndc.html" class="system-link">
+                        <div class="system-card sc-ndc">
+                            <h4>NDC</h4>
+                            <small>LATAM / IB / CM / GN</small>
+                        </div>
+                    </a>
+                    <a href="starlings.html" class="system-link">
+                        <div class="system-card sc-starlings">
+                            <h4>Starlings</h4>
+                            <small>Offline / FO</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        
+        
+
+        <div class="step-block">
+            <div class="step-header">
+                <div class="step-number">03</div>
+                <h3>Cierre en nuestro sistema ADMIN</h3>
+            </div>
+            <div class="step-content">
+                <div class="priority-list">
+                    <p>Toda tarea tiene sus prioridades y gestiones principales a tener en cuenta al momento de cerrar el pedido</p>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Atrápalo Argentina - Ops Center Dashboard</p>
+</footer>
+
+</body>
+</html>

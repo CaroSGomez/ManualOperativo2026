@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Sistemas y Reportes | Atrápalo Ops</title>
+    <link rel="stylesheet" href="../style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="inner-page">
+
+<header>
+    <h1>Atrápalo <span class="sub-logo">| Configuración y Cierres</span></h1>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="../index.html">« Volver al Dashboard</a></li>
+            <li><a href="#inicio">Logueo</a></li>
+            <li><a href="#impresoras">Impresoras</a></li>
+           
+        </ul>
+    </nav>
+</header>
+
+<main class="section-padding">
+
+    <section id="inicio" class="team-block" style="margin-bottom: 40px;">
+    <h2 style="color: var(--accent); margin-bottom: 20px;">🚀 Pasos para comenzar a gestionar</h2>
+    <div class="details-content">
+        <p>1. Loguearse en <a href="https://go.invoxcontact.io/login/?redirect=https://go.invoxcontact.io/webagent/" target="_blank" style="color:var(--accent); font-weight:bold;">Numintec</a> y cambiar el estado según la tarea asignada.</p>
+        <p>2. Desde el <strong>teléfono rojo</strong>, ingresar a la pantalla para cambiar y guardar el nuevo estado:</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 20px; margin: 20px 0;">
+            <img src="../img/logueo.png" alt="Logueo Numintec 1" style="width: 100%; max-width: none; border-radius: 8px; border: 1px solid var(--border-ui); display: block;">
+            <img src="../img/logueo-1.png" alt="Logueo Numintec 2" style="width: 100%; max-width: none; border-radius: 8px; border: 1px solid var(--border-ui); display: block;">
+        </div>
+
+        <p style="margin-top: 20px;">3. Abrir herramientas de trabajo principales:</p>
+        <div class="gds-chips" style="margin-top: 10px;">
+            <span class="chip">Gmail</span>
+            <a href="https://atrapaloargentina.freshdesk.com/a/dashboard/default" target="_blank" class="chip">Freshdesk (FD)</a>
+            <span class="chip">VPN</span>
+            <a href="https://admin.atrapalo.com.ar/" target="_blank" class="chip">Admin Atrápalo</a>
+        </div>
+    </div>
+</section>
+
+    <section id="impresoras" class="team-block" style="margin-bottom: 40px; border-left: 4px solid #3498db;">
+        <h2 style="color: #3498db; margin-bottom: 20px;">📠 Gestión de Impresoras (GDS)</h2>
+        <div class="details-content">
+            <div class="alert-box warning">
+                <strong>Proceso Diario:</strong> Es obligatorio levantar las impresoras al <strong>inicio</strong> y a <strong>mitad</strong> del día. En Galileo suelen caerse y requieren reactivación.
+            </div>
+
+            <div class="grid-validation" style="margin-top: 25px;">
+                <div class="gds-box">
+                    <h4>Comandos de Verificación</h4>
+                    <p><code>HQC</code>: Estado de archivos subidos/pendientes.</p>
+                    <img src="../img/hcq.png" alt="Comando HQC" style="margin: 10px 0; width: 100%;">
+                    <p><code>HMLD</code>: Valida si las impresoras están UP.</p>
+                    <img src="../img/image (1).png" alt="Comando HMLD" style="margin: 10px 0; width: 100%;">
+                </div>
+            </div>
+
+            <h3 style="margin: 30px 0 15px;">📍 Impresoras por Dominio (Galileo)</h3>
+            <div class="gds-container" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="gds-box">
+                    <h4 style="color: var(--accent);">🇦🇷 Argentina</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-dim);">IATA Propio: 55547925 | Ricale: 55507491</p>
+                    <ul style="font-family: monospace; font-size: 0.85rem; margin-top: 10px; list-style: none;">
+                        <li>• Logueo: HMLMB8C3E5DT/B8C3E6DI/B8C3E7DA</li>
+                        <li>• Pri: HMOMB8C3E5-U</li>
+                        <li>• Seg: HMOMB8C3E6-U</li>
+                        <li>• Ter: HMOMB8C3E7-U</li>
+                    </ul>
+                </div>
+                <div class="gds-box">
+                    <h4 style="color: var(--accent);">🇵🇪 Peru</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-dim);">IATA: 91503031</p>
+                    <ul style="font-family: monospace; font-size: 0.85rem; margin-top: 10px; list-style: none;">
+                        <li>• Logueo: HMLMFE0D86DI/FE0CC1DA</li>
+                        <li>• Pri: HMOMFE0CC1-U</li>
+                        <li>• Seg: HMOMFE0D86-U</li>
+                    </ul>
+                </div>
+                <div class="gds-box">
+                    <h4 style="color: var(--accent);">🇨🇱 Chile</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-dim);">IATA: 75502770</p>
+                    <ul style="font-family: monospace; font-size: 0.85rem; margin-top: 10px; list-style: none;">
+                        <li>• Logueo: HMLME707BEDA/BCA91DDI</li>
+                        <li>• Pri: HMOME707BE-U</li>
+                        <li>• Seg: HMOMBCA91D-U</li>
+                    </ul>
+                </div>
+                <div class="gds-box">
+                    <h4 style="color: var(--accent);">🇲🇽 México</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-dim);">IATA: 86970214</p>
+                    <ul style="font-family: monospace; font-size: 0.85rem; margin-top: 10px; list-style: none;">
+                        <li>• Logueo: HMLM862404DT/862405DI/862406DA</li>
+                        <li>• Pri: HMOMB88FAB-U</li>
+                        <li>• Status: HMLMB88FABDA</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+<div style="text-align: center; padding: 40px;">
+    <a href="#inicio">
+        <img src="../img/flecha-hacia-arriba.png" alt="Subir" style="width: 35px; filter: invert(1);">
+    </a>
+</div>
+
+<footer>
+    <p>© 2025 Atrápalo Operaciones - Manual de Sistemas Centrales</p>
+</footer>
+
+</body>
+</html>

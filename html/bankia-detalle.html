@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Bankias | Atrápalo Ops Center</title>
+    <link rel="stylesheet" href="../style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="inner-page">
+
+<header>
+    <h1>Atrápalo <span class="sub-logo">| Gestión Administrativa</span></h1>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="../index.html">« Volver al Dashboard</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="section-padding">
+    
+    <section id="bankias">
+        <div class="section-title">
+            <h2>Manejo de Bankias</h2>
+            <p>El tag Bankia tiene diferentes significados dependiendo de la perspectiva desde la cual se revisa.</p>
+        </div>
+
+        <div class="alert-box critical" style="margin-bottom: 30px;">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <span style="font-size: 1.5rem;">📢</span>
+                <div>
+                    <strong>Notas importantes:</strong> El pedido Emitido/Confirmado siempre debe quedar con el <strong>Owner</strong> del agente que lo cierra.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-container">
+            
+            <details class="product-card-v2 bankia-detail">
+                <summary>¿Qué significa el Tag Bankia?</summary>
+                <div class="details-content">
+                    <p>Para los reportes en el admin, el tag Bankia indica que dicho pedido fue revisado pero quedó <strong>pendiente de cierre</strong> por motivos ajenos al agente:</p>
+                    <ul class="member-list" style="margin: 15px 0;">
+                        <li>Rechazo de pago (TCR).</li>
+                        <li>Error en forma de pago (Bin no aplica cuotas).</li>
+                        <li>Errores en equipaje o reprogramaciones de itinerario.</li>
+                        <li>Diferencias de precio (Tarifas caídas).</li>
+                    </ul>
+                    <p>Ante cualquier traba para pasar el pedido a Vendido o Cancelado, cargaremos este tag para mantener un panel limpio de lo ya trabajado.</p>
+                    
+                    <div class="chip" style="margin-top: 15px; border-color: var(--accent); display: block; text-align: center;">
+                        📊 Carga en planilla SAC: Fecha | Admin | Importe Total | GP | Agente
+                    </div>
+                </div>
+            </details>
+
+            <details class="product-card-v2 bankia-detail">
+                <summary>¿Cómo se trabaja una Bankia? (Paso a Paso)</summary>
+                <div class="details-content">
+                    <div class="step-call">
+                        <strong>Paso 1: Anulación de cobros parciales</strong>
+                        <p>Si no podemos cerrar el pedido, no debemos retener dinero del pasajero. Anular cualquier cobro parcial en nuestro comercio (salvo excepciones de dominio o fecha).</p>
+                    </div>
+
+                    <div class="step-call">
+                        <strong>Paso 2: Aviso al Pasajero</strong>
+                        <p>Contacto telefónico (sugerido) o FD. El envío de FD es obligatorio si no hay llamada. Se deben ofrecer medios de pago alternativos y plazo de vencimiento.</p>
+                        <p>Herramienta recomendada: <a href="#" style="color: var(--accent); font-weight: bold;">Kommo</a></p>
+                    </div>
+
+                    <div class="step-call">
+                        <strong>¿Cuánto dura un pedido con Tag Bankia?</strong>
+                        <p>El vencimiento es en el día y depende de: <strong>Validez de la tarifa</strong> o <strong>Fin de turno del agente</strong>.</p>
+                    </div>
+
+                    <div class="step-call">
+                        <strong>Paso 4: Cierre del pedido</strong>
+                        <p>Si el pasajero no paga: <strong>Cancelar</strong>. Si concreta el pago: <strong>Emitir</strong> y cargar en planilla SAC.</p>
+                    </div>
+
+                    <div class="alert-box warning" style="font-size: 0.85rem;">
+                        <strong>Excepciones:</strong> Si liberas el pedido para que lo trabaje otro agente (ej. montos > USD 2000 para el turno siguiente), no hay reclamo de comisión posible.
+                    </div>
+                </div>
+            </details>
+
+            <details class="product-card-v2 bankia-detail">
+                <summary>¿Cuándo aplica a un agente? (Comisiones)</summary>
+                <div class="details-content">
+                    <p>Se considera Bankia cuando el agente realiza el seguimiento en el día y logra convertirlo a <strong>Vendido</strong>.</p>
+                    
+                    <h4 style="margin: 15px 0 10px; color: var(--accent);">Pagos fuera de mi horario laboral</h4>
+                    <p>Si la tarifa está garantizada e interesa al pasajero, se puede dejar libre para que lo cierre la <strong>Capitana</strong> del turno siguiente manteniendo nuestro owner. Se debe avisar a ambas partes el plazo de vencimiento.</p>
+
+                    <h4 style="margin: 15px 0 10px; color: var(--accent);">¿Qué pasa si el pasajero llama para cerrar?</h4>
+                    <p>Si el cliente llama, el agente que atiende debe cerrar el pedido con <strong>su propio owner</strong>. El agente original pierde la comisión de Bankia.</p>
+                </div>
+            </details>
+
+            <details class="product-card-v2 bankia-detail">
+                <summary>¿Qué pasa si el GP es negativo?</summary>
+                <div class="details-content">
+                    <p>Ocurre por estrategias comerciales de la empresa. Aunque no haya ganancia monetaria inmediata, la gestión desde SAC es vital para la calidad y fidelización del cliente.</p>
+                </div>
+            </details>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="#bankias">
+                <img src="../img/flecha-hacia-arriba.png" alt="Subir" style="width: 40px; filter: invert(1);">
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2025 Atrápalo Operaciones - CaroGomez</p>
+</footer>
+
+</body>
+</html>

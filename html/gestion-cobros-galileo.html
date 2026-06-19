@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cobros Galileo | Ops Center</title>
+    <link rel="stylesheet" href="../style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --accent: #e67e22; 
+            --bg-card: rgba(30, 41, 59, 0.7); 
+            --success: #2ecc71;
+            --danger: #e74c3c;
+            --info: #3498db;
+        }
+
+        .comando { 
+            background: #000; 
+            color: var(--success); 
+            padding: 4px 10px; 
+            border-radius: 6px; 
+            font-family: 'JetBrains Mono', monospace; 
+            font-size: 0.95em;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            display: inline-block;
+        }
+
+        .step-box { 
+            background: var(--bg-card); 
+            border-left: 5px solid var(--accent); 
+            padding: 25px; 
+            margin-bottom: 30px; 
+            border-radius: 0 16px 16px 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Diseño de tarjetas de dominio */
+        .domain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0 40px 0;
+        }
+
+        .domain-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .domain-card:hover {
+            background: rgba(230, 126, 34, 0.2);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .domain-card .flag {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .domain-card span {
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .alert-adm { 
+            background: rgba(231, 76, 60, 0.1); 
+            border: 1px solid var(--danger); 
+            padding: 20px; 
+            border-radius: 12px; 
+            margin: 20px 0; 
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cobro-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .cobro-box { 
+            padding: 20px; 
+            border-radius: 12px; 
+            background: rgba(255,255,255,0.03); 
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .badge-info { 
+            display: inline-block; 
+            padding: 3px 10px; 
+            border-radius: 4px; 
+            font-size: 0.7rem; 
+            font-weight: 800; 
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body class="inner-page">
+
+<header>
+    <div class="header-content">
+        <h1>Atrápalo <span class="sub-logo">| Gestión de Cobros Galileo</span></h1>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="gestion-vuelos.html">« Volver a Vuelos</a></li>
+            <li><a href="galileo.html">Manual Galileo</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="section-padding">
+    <div class="section-title">
+        <h2>Protocolos de Emisión y Financiamiento</h2>
+    </div>
+
+    <div class="submenu-container" style="margin-bottom: 40px;">
+        <ul class="submenu">
+            <li><a href="#estrategia">Estrategia General</a></li>
+            <li><a href="#dominios">Dominios</a></li>
+            <li><a href="#internacional">Tarifas USD</a></li>
+        </ul>
+    </div>
+
+    <section id="estrategia" class="step-block" style="border-left-color: #3498db;">
+        <h3>Optimización de Ganancia</h3>
+        <p>El uso del Admin genera costos porcentuales. Maximizamos el margen separando el cobro.</p>
+        
+        <div class="cobro-split">
+            <div class="cobro-box">
+                <span class="badge-info" style="background: var(--success); color: white;">AÉREO → UATP</span>
+                <p style="font-size: 0.85rem; color: #cbd5e1;">Monto del ticket procesado por la aerolínea. <strong>Costo financiero: 0%</strong>.</p>
+            </div>
+            <div class="cobro-box">
+                <span class="badge-info" style="background: var(--info); color: white;">FEES → ADMIN</span>
+                <p style="font-size: 0.85rem; color: #cbd5e1;">Gestión y extras procesados por Atrápalo. Es nuestra ganancia líquida.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="dominios">
+        <div style="margin: 40px 0 20px 0; text-align: center;">
+            <p style="color: var(--text-dim); font-size: 0.95rem;">Teniendo en cuenta que actualmente tenemos venta en varios dominios, debemos aplicar la estrategia de cobro específica para cada uno.</p>
+            <h3 style="margin-top: 10px;">Elija el dominio a gestionar:</h3>
+        </div>
+
+        <div class="domain-grid">
+            <a href="cobros-argentina.html" class="domain-card">
+                <span class="flag">🇦🇷</span>
+                <span>ARGENTINA</span>
+            </a>
+            <a href="cobros-peru.html" class="domain-card">
+                <span class="flag">🇵🇪</span>
+                <span>PERÚ</span>
+            </a>
+            <a href="cobros-chile.html" class="domain-card">
+                <span class="flag">🇨🇱</span>
+                <span>CHILE</span>
+            </a>
+            <a href="cobros-mexico.html" class="domain-card">
+                <span class="flag">🇲🇽</span>
+                <span>MÉXICO</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="internacional">
+        <div class="step-box" style="border-left-color: #f1c40f;">
+            <h2>3. Reservas Internacionales (Tarifas USD)</h2>
+            <div class="alert-adm">
+                <div style="font-size: 1.5rem;">🚨</div>
+                <div>
+                    <strong>PELIGRO DE ADM:</strong> Las aerolíneas en Argentina suelen rechazar UATP para tarifas cargadas en USD. 
+                    <strong>Procedimiento obligatorio: EMISIÓN CASH.</strong>
+                </div>
+            </div>
+            
+            <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
+                <p>Pasos críticos para evitar errores de cambio:</p>
+                <ul style="margin-top: 15px; padding-left: 20px;">
+                    <li style="margin-bottom: 10px;">Si el PNR está en USD pero se cobró en ARS en el Admin, verifique el cambio aplicado.</li>
+                    <li style="margin-bottom: 10px;">Para convertir tarifa a USD en Galileo: <span class="comando">FQ:USD</span></li>
+                    <li style="margin-bottom: 10px;">Forzar pago CASH en USD: <span class="comando">TMUXFS</span></li>
+                    <li style="margin-bottom: 10px;">Firma y cierre antes de emitir: <span class="comando">R.CG+ER</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2025 Atrápalo Argentina - Ops Center | Departamento de Emisiones</p>
+</footer>
+
+</body>
+</html>

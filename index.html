@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atrápalo Ops Center | Dashboard Operativo</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- =====================================================================
+     HEADER
+     ===================================================================== -->
+<header>
+    <div class="header-content">
+        <h1>Atrápalo <span class="sub-logo">| Ops Center</span></h1>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#objetivo">Misión</a></li>
+            <li><a href="#flujo-operativo">Antiestafa y Pedidos</a></li>
+            <li><a href="#gestion-diaria">Gestión y KPIs</a></li>
+            <li><a href="#distribucion">Organización</a></li>
+            <li><a href="#guias-tecnicas">Sistemas</a></li>
+            <li><a href="#equipos">Equipos</a></li>
+            <li><a href="html/contacto.html" class="nav-cta">📣 Sugerencias</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <!-- =================================================================
+         MISIÓN
+         ================================================================= -->
+    <section id="objetivo" class="hero-section">
+        <div class="container">
+            <h2>Nuestra Misión</h2>
+            <p>Maximizar la felicidad de nuestros clientes facilitando el acceso a las mejores experiencias de ocio y viajes, garantizando eficiencia operativa y excelencia en cada gestión manual.</p>
+        </div>
+    </section>
+
+
+    <!-- =================================================================
+         FLUJO OPERATIVO — Antiestafa, Pedidos, Atención
+         ================================================================= -->
+    <section id="flujo-operativo" class="section-padding">
+        <div class="dashboard-grid">
+
+            <a href="html/antiestafa.html" class="flow-card flow-card--red">
+                <span class="flow-icon">🛡️</span>
+                <h3>1. Análisis de Riesgo (AE)</h3>
+                <p><strong>Obligatorio para:</strong> Vuelos, Hoteles, Terrestres y Canjes. Verificación de identidad y validación de cobro.</p>
+                <span class="flow-cta">FILTRO DE SEGURIDAD →</span>
+            </a>
+
+            <a href="html/gestion-pedidos.html" class="flow-card flow-card--yellow">
+                <span class="flow-icon">📦</span>
+                <h3>2. Gestión de Pedidos</h3>
+                <p>Acceso a las consolas de gestión operativa por cada vertical de producto una vez aprobado el AE.</p>
+                <span class="flow-cta">INGRESAR A GESTIÓN →</span>
+            </a>
+
+            <a href="html/atencion-cliente.html" class="flow-card flow-card--blue">
+                <span class="flow-icon">📞</span>
+                <h3>3. Atención al Cliente</h3>
+                <p>Protocolos de voz, scripts de llamadas y FreshDesk.</p>
+                <span class="flow-cta">MANUAL DE AGENTE →</span>
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- =================================================================
+         GESTIÓN OPERATIVA Y KPIs
+         ================================================================= -->
+    <section id="gestion-diaria" class="section-padding bg-alt">
+        <div class="section-title">
+            <h2>🚀 Gestión Operativa y Rendimiento</h2>
+            <p>Lineamiento de trabajo diario y parámetros de medición.</p>
+        </div>
+
+        <div class="operativa-grid">
+
+            <!-- Prioridades -->
+            <div class="priority-container">
+                <h3>Orden de Prioridades</h3>
+                <div class="priority-list">
+                    <div class="priority-item top">
+                        <span class="number">1</span>
+                        <p><strong>Mail SACLATAM:</strong> Urgencias y nuevas bajadas.</p>
+                    </div>
+                    <div class="priority-item highlight">
+                        <span class="number">2</span>
+                        <p><strong>Emisión de Vuelos:</strong> Prioridad absoluta.</p>
+                    </div>
+                    <div class="priority-item">
+                        <span class="number">3</span>
+                        <p>Atención al cliente (Llamadas / FreshDesk)</p>
+                    </div>
+                    <div class="priority-item">
+                        <span class="number">4</span>
+                        <p>Hoteles / Cruceros</p>
+                    </div>
+                    <div class="priority-item">
+                        <span class="number">5</span>
+                        <p>Reemisiones (Voluntarias e Involuntarias)</p>
+                    </div>
+                    <div class="priority-item">
+                        <span class="number">6</span>
+                        <p>Recuperados y Tramos HX</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KPIs -->
+            <div class="metrics-sidebar">
+                <h3>Tus KPIs</h3>
+
+                <div class="metric-card-v2 kpi-bankias">
+                    <h4>💰 Bankias</h4>
+                    <p>Conciliación financiera y gestión de rechazos.</p>
+                </div>
+
+                <div class="metric-card-v2 kpi-ventas">
+                    <h4>📈 Ventas</h4>
+                    <p>Cierres positivos y conversiones realizadas.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-40">
+            <a href="html/bankia-detalle.html" class="btn-action">
+                📖 Consultar Protocolo Completo de Bankias y Comisiones
+            </a>
+        </div>
+    </section>
+
+
+    <!-- =================================================================
+         ORGANIZACIÓN — Turnos Día / Noche
+         ================================================================= -->
+    <section id="distribucion" class="section-padding">
+        <div class="section-title">
+            <h2>📋 Organización de SAC y Distribución</h2>
+            <p>Coordinación entre Capitanas y compromiso de equipo.</p>
+        </div>
+
+        <div class="alert-box info">
+            <span class="alert-icon">💡</span>
+            <p><strong>Estrategia:</strong> Mantener el Excel de asignación actualizado y comunicación constante entre turnos para garantizar resultados óptimos.</p>
+        </div>
+
+        <div class="teams-container">
+            <div class="team-block">
+                <h3 style="color: #f1c40f;">☀️ Gestión Turno Día</h3>
+                <ul class="member-list">
+                    <li><strong>Arranque:</strong> Verificar FD Guardia abiertos, mails urgentes y traspaso del turno noche.</li>
+                    <li><strong>Personal:</strong> Revisar cronograma de agentes activos y actualizar planilla de horarios.</li>
+                    <li><strong>Admin:</strong> Verificación de verticales de productos y comparación con planilla de tareas.</li>
+                    <li><strong>Asignación:</strong> Distribución de pedidos nuevos, FDs, Vuelos, Htls y Vj/Cr.</li>
+                    <li><strong>Responsabilidad:</strong> Dejar reemisiones voluntarias limpias antes del cierre telefónico.</li>
+                </ul>
+            </div>
+
+            <div class="team-block">
+                <h3 style="color: #9b59b6;">🌙 Gestión Turno Noche</h3>
+                <ul class="member-list">
+                    <li><strong>Recepción:</strong> Recibir panel limpio y planilla de tareas asignadas del día.</li>
+                    <li><strong>Continuidad:</strong> Seguir cadena de prioridades en todas las verticales de productos.</li>
+                    <li><strong>Exclusivo:</strong> Chequeo de <strong>Tag Transferencia</strong> (según plazos web).</li>
+                    <li><strong>Cierre:</strong> Gestionar FD Guardia post-19hs y reportar urgencias por mail para la mañana.</li>
+                    <li><strong>Organización:</strong> Dejar asignados los vuelos a los primeros agentes del cronograma matutino.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =================================================================
+         PROCEDIMIENTOS Y SISTEMAS
+         ================================================================= -->
+    <section id="guias-tecnicas" class="section-padding bg-alt">
+        <div class="section-title">
+            <h2>⚙️ Procedimientos y Sistemas</h2>
+            <p>Guías paso a paso para la configuración de herramientas y cierres de jornada.</p>
+        </div>
+
+        <div class="product-grid">
+            <article class="product-card-v2">
+                <div class="p-icon">🖥️</div>
+                <h3>Sistema Central</h3>
+                <p>Logueo, configuración de Impresoras y Numintec.</p>
+                <a href="html/gestion-sistema.html" class="btn-action btn-sm">Abrir Guía</a>
+            </article>
+
+            <article class="product-card-v2">
+                <div class="p-icon">📊</div>
+                <h3>Fin de Jornada</h3>
+                <p>Reportes de cierre y validación de tareas finalizadas.</p>
+                <a href="html/fin-dia.html" class="btn-action btn-sm">Ver Procedimiento</a>
+            </article>
+        </div>
+    </section>
+
+
+    <!-- =================================================================
+         EQUIPOS DE APOYO
+         ================================================================= -->
+    <section id="equipos" class="section-padding">
+        <div class="section-title">
+            <h2>Equipos de Apoyo</h2>
+        </div>
+
+        <div class="teams-container">
+            <div class="team-block">
+                <h3>🛡️ Calidad (QA)</h3>
+                <ul class="member-list">
+                    <li><strong>Lucila Zangrando</strong> — Análisis y Validación de Riesgos</li>
+                    <li><strong>Carolina Gomez</strong> — Gestiones operativas</li>
+                    <li><strong>Daniela Azcurra</strong> — Soporte en legales y procesos operativos</li>
+                </ul>
+            </div>
+
+            <div class="team-block">
+                <h3>📞 SAC</h3>
+                <ul class="member-list">
+                    <li><strong>Bárbara Díaz</strong> — Jefa de área</li>
+                    <li><strong>Djinno</strong> — Soporte comercial</li>
+                    <li><strong>Dalila Domke</strong> — Capitana AM</li>
+                    <li><strong>Ninoska Reyes</strong> — Capitana PM</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- =====================================================================
+     FOOTER
+     ===================================================================== -->
+<footer>
+    <p>&copy; 2025 Atrápalo Operaciones — Portal interno de uso exclusivo del equipo SAC.</p>
+</footer>
+
+</body>
+</html>

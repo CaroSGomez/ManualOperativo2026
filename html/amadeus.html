@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Amadeus | Ops Center</title>
+    <link rel="stylesheet" href="../style2.css">
+</head>
+<body class="inner-page">
+
+<header>
+    <h1>Atrápalo <span class="sub-logo">| Manual de Amadeus</span></h1>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="gestion-vuelos.html">« Volver a Vuelos</a></li> 
+        </ul>
+    </nav>
+</header>
+
+<div class="submenu-container">
+    <ul class="submenu">
+        <li><a href="#logueo">Logueo</a></li>
+        <li><a href="#iatas">Iatas/Pseudos</a></li>
+        <li><a href="#pnr">Creación de PNR</a></li>
+        <li><a href="#void">Anulación (Void)</a></li>
+        <li><a href="#comandos">Comandos</a></li>
+    </ul>
+</div>
+
+<main class="section-padding">
+    <h1>Manual Operativo Amadeus</h1>
+    <p class="subtitle">Guía de comandos y procedimientos para Selling Platform Connect.</p>
+
+    <section id="logueo" class="step-box amadeus-blue">
+        <h2>Logueo Inicial</h2>
+        <div class="step-content">
+            <p>Ingresamos al sistema desde su entorno web: 
+                <a class="link" href="https://www.sellingplatformconnect.amadeus.com/" target="_blank">Amadeus Selling Connect</a>.
+            </p>
+            <p>Al abrir el programa, nos pedirá el <strong>User</strong>, <strong>ID de Oficina (OID)</strong> y el <strong>Password</strong>.</p>
+            <img src="../img/ama1.png" alt="Login Amadeus" class="img-fluid login-img">
+            <p class="helper-text">El ID de Oficina define el pseudo/dominio donde vamos a gestionar las reservas.</p>
+        </div>
+    </section>
+
+    <section id="iatas" class="step-box amadeus-green">
+        <h2>Iatas LATAM</h2>
+        <div class="iata-grid">
+            <div class="iata-card">
+                <h4>🇦🇷 Argentina</h4>
+                <p><strong>Iata Propio:</strong> 55547925<br><strong>OID:</strong> BUEZO210D</p>
+                <p><strong>Iata Ricale:</strong> 55507491<br><strong>OID:</strong> BUEZO2107</p>
+            </div>
+            <div class="iata-card">
+                <h4>🇵🇪 Perú</h4>
+                <p><strong>Iata Propio:</strong> 91503031<br><strong>OID:</strong> LIMZO2107</p>
+            </div>
+            <div class="iata-card">
+                <h4>🇨🇱 Chile</h4>
+                <p><strong>Iata Propio:</strong> 75502770<br><strong>OID:</strong> SCLZO2107</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pnr" class="step-box">
+        <h2>¿Cómo crear una reserva de cero?</h2>
+        
+        <div class="users">
+            <span class="step-number">Paso 1</span> <strong>Nombres:</strong> 
+            Usa <span class="comando">NM1</span> seguido de Apellido/Nombre.
+            <div class="example">Ejemplo: <span class="comando">NM1GOMEZ/CAROLINA</span></div>
+        </div>
+
+        <div class="users">
+            <span class="step-number">Paso 2</span> <strong>Disponibilidad:</strong> 
+            Usa <span class="comando">AN</span> + Fecha + Ruta + Aerolínea.
+            <div class="example">Ejemplo: <span class="comando">AN26SEPAEPBRC/AJA</span></div>
+        </div>
+
+        <div class="users">
+            <span class="step-number">Paso 3</span> <strong>Guardar lugares:</strong> 
+            Comando <span class="comando">SS</span> (Vender).
+            <div class="example">Ejemplo: <span class="comando">SS1L1</span></div>
+        </div>
+
+        <div class="users">
+            <span class="step-number">Paso 4</span> <strong>Datos de Oficina:</strong> 
+            <ul class="sub-list">
+                <li>• Teléfono empresa: <span class="comando">AP</span></li>
+                <li>• Plazo de emisión: <span class="comando">TKTL</span></li>
+            </ul>
+        </div>
+
+        <div class="users">
+            <span class="step-number">Paso 5</span> <strong>Contacto Pasajero (SSR):</strong> 
+            <ul class="sub-list">
+                <li>• Teléfono: <span class="comando">SRCTCMYYHK1-541168554866</span></li>
+                <li>• Email: <span class="comando">SRCTCEYYHK1-gomez//atrapalo.com.ar/P1</span></li>
+                <li>• DNI: <span class="comando">SRFOIDYYHK1-NI34587951/P1</span></li>
+            </ul>
+        </div>
+
+        <div class="users">
+            <span class="step-number">Paso 6</span> <strong>Cotización:</strong> 
+            <div class="grid-comandos">
+                <span><span class="comando">FXR</span> (Cotizar)</span>
+                <span><span class="comando">FXP</span> (Guardar Tfa)</span>
+                <span><span class="comando">FXB</span> (Más barato)</span>
+            </div>
+        </div>
+
+        <div class="users">
+            <span class="step-number">Paso 7</span> <strong>Cierre:</strong> 
+            <span class="comando">RF</span> + <span class="comando">ER</span>
+        </div>
+    </section>
+
+    <section id="void" class="step-box amadeus-red">
+        <h2>Anulación (Void)</h2>
+        <p>Solo se pueden voidear tickets con estatus <strong>OPEN</strong>.</p>
+        
+        <div class="users highlight">
+            <strong>Comando de Void:</strong> <span class="comando">TRDC/L(nro_linea)</span>
+        </div>
+
+        <img src="../img/voidam.png" alt="Respuesta Void" class="img-fluid">
+
+        <p>Verificación post-anulación:</p>
+
+<footer>
+    <p>© 2025 Atrápalo Argentina - Manual de Amadeus GDS</p>
+</footer>
+
+</body>
+</html>

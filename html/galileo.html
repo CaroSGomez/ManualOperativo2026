@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Galileo | Ops Center</title>
+    <link rel="stylesheet" href="../style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos para los botones de acceso a procedimientos detallados */
+        .summary-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .btn-procedure {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            margin-top: 15px;
+            gap: 10px;
+        }
+        .btn-procedure:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        
+        .btn-cobro { background: #2ecc71; color: #fff; }
+        .btn-remision { background: #f1c40f; color: #000; }
+        .btn-refund { background: #e67e22; color: #fff; }
+        .btn-colas { background: #9b59b6; color: #fff; }
+    </style>
+</head>
+<body class="inner-page">
+
+<header>
+    <div class="header-content">
+        <h1>Atrápalo <span class="sub-logo">| Manual de Galileo</span></h1>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="gestion-vuelos.html">📦 Volver a Gestión de Vuelos</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="submenu-container">
+    <ul class="submenu">
+        <li><a href="#logueo">Logueo</a></li>
+        <li><a href="#iatas">Iatas</a></li>
+        <li><a href="#pnr">PNR</a></li>
+        <li><a href="#void">VOID</a></li>
+        <li><a href="#cobros">Cobros</a></li>
+        <li><a href="#remisiones">Remisiones</a></li>
+        <li><a href="#devoluciones">Devoluciones</a></li>
+        <li><a href="#colas">Colas</a></li>
+        <li><a href="#comandos">Diccionario</a></li>
+    </ul>
+</div>
+
+<main class="section-padding">
+
+    <section id="logueo" class="team-block">
+        <h2>🔑 Logueo Inicial</h2>
+        <div class="details-content">
+            <p>Al abrir el programa, ingresar <strong>SON/ID</strong> y <strong>Password</strong>.</p>
+            <img src="../img/logueoga.png" alt="Logueo Galileo" style="width: 80%; border-radius: 8px; margin: 15px 0;">
+            <p>Siguiente paso: Emularse en el pseudo/dominio a gestionar:</p>
+            <img src="../img/logueoga-1.png" alt="Emulación" style="width: 80%; border-radius: 8px; margin: 15px 0;">
+            <p>La pantalla confirmará el acceso y mostrará el dominio activo:</p>
+            <img src="../img/pseudo.png" alt="Status Pseudo" style="width: 80%; border-radius: 8px; margin: 15px 0;">
+        </div>
+    </section>
+
+    <section id="iatas" class="team-block bg-alt">
+        <h2>🌍 Iatas LATAM</h2>
+        <div class="gds-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <div class="gds-box">
+                <h4>🇦🇷 Argentina</h4>
+                <p><strong>Iata Propio: 55547925</strong><br>8RV (Gral) / 88M (VMH)<br><code>SEM/8RV/AG</code> o <code>SEM/88M/AG</code></p>
+                <hr style="opacity: 0.1; margin: 10px 0;">
+                <p><strong>Iata Ricale: 55507491</strong><br>7C08 (Gral) / 313T (VMH)<br><code>SEM/7C08/AG</code> o <code>SEM/313T/AG</code></p>
+            </div>
+            <div class="gds-box">
+                <h4>🇵🇪 Perú</h4>
+                <p><strong>Iata: 91503031</strong><br>Pseudo: 55MR (Gral)<br><code>SEM/55MR/AG</code></p>
+            </div>
+            <div class="gds-box">
+                <h4>🇨🇱 Chile</h4>
+                <p><strong>Iata: 75502770</strong><br>668Q (Gral) / 31LT (VMH)<br><code>SEM/668Q/AG</code> o <code>SEM/31LT/AG</code></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pnr" class="section-manual">
+        <h2 style="margin-bottom: 20px;">✈️ ¿Cómo tomar una reserva de cero?</h2>
+        <div class="pnr-timeline">
+            <div class="pnr-step-item"><div class="step-number">1</div><div class="step-info"><h4>Nombres y tipos de pasajeros</h4><p>El indicador de nombre es: <strong>N</strong> <br>El orden siempre debe ser Apellido/Nombre <br>El agregar los nombres de los pasajeros en primer lugar facilita el proceso de guardar lugares en la reserva</p><div class="galileo-cmd"><strong>N.</strong>GOMEZ/CAROLINA</div> <p>Pasajero ADULTO</p><br> <div class="galileo-cmd"><strong>N.</strong>GOMEZ/BENJAMIN*P-C06</div><p>Pasajero CHILD (menor de 12)</p><br><div class="galileo-cmd"><strong>N.I/</strong>GOMEZ/MAIA*27JUN25</div><p>Pasajero INFANTE (menor de 2 siempre asociado a un pasajero adulto)</p><br></div></div>
+            <div class="pnr-step-item"><div class="step-number">2</div><div class="step-info"><h4>Disponibilidad</h4><p>El indicador de busqueda es: <strong>A</strong> <br>El orden siempre debe ser FECHA/RUTA/CIA <br>Se puede buscar con / o *
+ </p><div class="galileo-cmd"><strong>A</strong>26SEPAEPJUJ<strong>/</strong>AR</div></div></div>
+            <div class="pnr-step-item"><div class="step-number">3</div><div class="step-info"><h4>Vender Lugares</h4><p>El proceso con comandos seria el siguiente: <br> <strong>0</strong>: Vender <br> <strong>1</strong>: Cantidad de pasajeros <br> <strong>Y</strong>: Clase <br> <strong>3</strong>: Segmento de vuelo</p><div class="galileo-cmd"><strong>01Y3</strong></div><p style="font-style: italic;"> <br> En el smart podemos tomar los segmentos dando click sobre la clase que queremos
+</p></div></div>
+            <div class="pnr-step-item"><div class="step-number">4</div><div class="step-info"><h4>Datos Obligatorios</h4><p>Lo primero que debemos grabar en el pnr para poder cerrarlo es la informacion de la empresa. <br> El comando que guarda el telefono de la empresa es: <strong>CM/</strong> <br> El segundo dato obligatorio es el tiempo limite. El comando que guarda el plazo es: <strong>T.T/</strong></p><div class="galileo-cmd"><strong>CM/</strong> | <strong>T.T/</strong></div></div></div>
+            <div class="pnr-step-item"><div class="step-number">5</div><div class="step-info"><h4>Datos de contacto de pasajeros</h4><div class="galileo-cmd">SI.P1/SSRCTCEYYHK1/gomez<strong>//</strong>atrapalo.com.ar</div></div></div>
+            <div class="pnr-step-item"><div class="step-number">6</div><div class="step-info"><h4>Cotizar</h4><div class="galileo-cmd"><strong>FQ</strong> o <strong>FQBB</strong></div></div></div>
+            <div class="pnr-step-item" style="border-left-color: #2ecc71;"><div class="step-number" style="background: #2ecc71;">7</div><div class="step-info"><h4>Firma y Cierre</h4><div class="galileo-cmd"><strong>R.</strong>INICIALES+<strong>ER</strong></div></div></div>
+        </div>
+        <img src="../img/pnrcero.png" alt="PNR Finalizado" style="width: 100%; border-radius: 12px; margin-top:20px;">
+    </section>
+
+    <section id="void" class="team-block" style="border-left: 4px solid var(--accent);">
+        <h2>🚫 Anulación de PNR (Void)</h2>
+        <div class="details-content">
+            <div class="alert-box warning">Solo se permite voidear tickets con status <strong>OPEN</strong>.</div>
+            <p><strong>TRV/(nrodetkt)</strong>: Comando de anulación.</p>
+            <img src="../img/voidgali.png" alt="Comando Void" style="width: 100%; margin: 15px 0;">
+            <p>Luego aplicar <strong>IR</strong>. ¡IMPORTANTE! Siempre usar <strong>XI</strong> para limpiar el itinerario.</p>
+        </div>
+    </section>
+
+    <section id="cobros" class="team-block bg-alt" style="border-left: 4px solid #2ecc71;">
+        <h2>💰 Gestión de Cobros y Emisión</h2>
+        <div class="summary-card">
+            <p>Procedimiento detallado para el procesamiento de pagos, Merchant de Aerolínea vs Atrápalo y comandos de emisión de tickets electrónicos.</p>
+            <a href="gestion-cobros-galileo.html" class="btn-procedure btn-cobro">Abrir Procedimiento de Cobros →</a>
+        </div>
+    </section>
+
+    <section id="remisiones" class="team-block" style="border-left: 4px solid #f1c40f;">
+        <h2>🔄 Remisiones (Reissues)</h2>
+        <div class="summary-card">
+            <p>Gestión de cambios de itinerario. Incluye el flujo para <strong>Remisiones Voluntarias</strong> (solicitud pax) y <strong>Remisiones Involuntarias</strong> (cambios de aerolínea).</p>
+            <a href="galileo-remisiones.html" class="btn-procedure btn-remision">Ver Menú de Remisiones →</a>
+        </div>
+    </section>
+
+    <section id="devoluciones" class="team-block bg-alt" style="border-left: 4px solid #e67e22;">
+        <h2>🔙 Devoluciones (Refunds)</h2>
+        <div class="summary-card">
+            <p>Cálculo de penalidades, tasas no reembolsables y ejecución de Refund por sistema (TRNC) o vía BSP Link.</p>
+            <a href="galileo-devoluciones.html" class="btn-procedure btn-refund">Ver Procedimiento de Reembolso →</a>
+        </div>
+    </section>
+
+    <section id="colas" class="team-block" style="border-left: 4px solid #9b59b6;">
+        <h2>📥 Gestión de Colas (Queues)</h2>
+        <div class="summary-card">
+            <p>Revisión obligatoria de buzones (QCA). Manejo de cambios de horario (TK), cancelaciones de segmentos (HX) y errores de emisión.</p>
+            <a href="galileo-colas.html" class="btn-procedure btn-colas">Gestionar Colas de Trabajo →</a>
+        </div>
+    </section>
+
+    <section id="comandos" class="section-manual">
+        <h2>📚 Diccionario de Comandos Rápidos</h2>
+        <div class="commands-grid">
+            <div class="command-category">
+                <h4>🔍 Disponibilidad</h4>
+                <div class="cmd-row"><span>General</span><span class="cmd-syntax">A[Fecha][Ruta]</span></div>
+                <div class="cmd-row"><span>Vender</span><span class="cmd-syntax">0[Pax][Clase][Seg]</span></div>
+            </div>
+            <div class="command-category">
+                <h4>💰 Tarifas</h4>
+                <div class="cmd-row"><span>Cotizar</span><span class="cmd-syntax">FQ</span></div>
+                <div class="cmd-row"><span>Más económica</span><span class="cmd-syntax">FQBB</span></div>
+            </div>
+            <div class="command-category">
+                <h4>🎫 Tickets</h4>
+                <div class="cmd-row"><span>Ver TKT</span><span

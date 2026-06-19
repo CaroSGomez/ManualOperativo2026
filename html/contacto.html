@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugerencias | Ops Center</title>
+    <link rel="stylesheet" href="../style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para el formulario */
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        form input[type="text"],
+        form input[type="email"],
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+        form input:focus, form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(0, 0, 0, 0.5);
+        }
+        form input[type="file"] {
+            margin-bottom: 25px;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <h1>¡Decilo <span class="sub-logo">Enzo!</span></h1>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="../index.html">« Volver al Dashboard</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="section-padding">
+    <div class="container">
+        <div class="section-title">
+            <h2>Canal de Sugerencias y Quejas</h2>
+            <p>Tu feedback nos ayuda a mejorar los procesos operativos de SAC Latam.</p>
+        </div>
+
+        <div class="form-container">
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Tu nombre" required minlength="3">
+
+                <label for="email">Email Corporativo</label>
+                <input type="email" name="mail" id="email" placeholder="usuario@atrapalo.com.ar">
+
+                <label for="tipo">Tipo de Mensaje</label>
+                <select name="tipo" id="tipo">
+                    <option value="sugerencia">💡 Sugerencia de proceso</option>
+                    <option value="queja">⚠️ Reporte de error / Queja</option>
+                    <option value="felicitacion">🙌 Feedback Positivo</option>
+                </select>
+
+                <label for="texto">Mensaje / Detalle</label>
+                <textarea name="mensaje" id="texto" rows="6" placeholder="Expresate con libertad..." required></textarea>
+
+                <label for="archivos">Adjuntar Evidencia (Opcional)</label>
+                <input type="file" name="archivos" id="archivos">
+
+                <button type="submit" class="btn-submit">Enviar Comentario 🚀</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Atrápalo Operaciones - CaroGomez</p>
+</footer>
+
+</body>
+</html>
