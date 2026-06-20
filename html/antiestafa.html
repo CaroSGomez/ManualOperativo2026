@@ -4,143 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual Antiestafa | Ops Center</title>
-    <link rel="stylesheet" href="../style2.css">
-    <style>
-        /* Estilos específicos para la página de Antiestafa */
-        .antiestafa-section { padding: 20px; max-width: 1200px; margin: auto; }
-        .submenu-internal { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; margin-bottom: 30px; }
-        .submenu-internal ul { list-style: none; display: flex; gap: 20px; justify-content: center; padding: 0; }
-        .submenu-internal a { color: var(--accent); text-decoration: none; font-weight: bold; font-size: 0.9rem; }
-        
-        .antiestafa-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 25px; margin-bottom: 30px; }
-        .antiestafa-card h2 { color: var(--accent); margin-top: 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
-
-        .grid-validation { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
-        .validation-item { background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; border-top: 3px solid var(--accent); }
-        .validation-item h4 { margin: 0 0 10px 0; color: #fff; }
-        .validation-item p { font-size: 0.85rem; color: var(--text-dim); margin: 0; }
-
-        .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px; }
-        .country-box { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px; }
-        .country-box h4 { margin-top: 0; color: var(--accent); border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
-        .country-box ul { padding-left: 20px; font-size: 0.85rem; }
-        .country-box li { margin-bottom: 8px; }
-
-        .checklist-list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .checklist-list li { background: rgba(46, 204, 113, 0.1); padding: 10px; border-radius: 5px; font-size: 0.85rem; display: flex; align-items: center; gap: 10px; }
-        .checklist-list input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
-
-        @media (max-width: 768px) { .tools-grid, .checklist-list { grid-template-columns: 1fr; } .submenu-internal ul { flex-direction: column; align-items: center; } }
-    </style>
+    <link rel="stylesheet" href="../style.css">
 </head>
-<body class="inner-page">
+<body>
 
-<header>
-    <div class="header-content">
-        <h1>Atrápalo <span class="sub-logo">| Prevención de Fraude</span></h1>
-    </div>
-    <nav class="main-nav">
-        <ul>
-            <li><a href="../index.html">« Volver al Dashboard</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-    <section id="antiestafa" class="antiestafa-section">
-        <div class="section-title">
-            <h1>🛡️ Manual de Antiestafa</h1>
-            <p>Protocolo de validación de identidad y prevención de fraude con tarjetas.</p>
-        </div>
-
-        <div class="submenu-internal">
+    <!-- MENÚ LATERAL (SIDEBAR): Adaptado a la estructura fija global -->
+    <aside class="sidebar">
+        <div>
+            <div class="sidebar-header">
+                Atrápalo <br>
+                <span class="sub-logo">Prevención de Fraude</span>
+            </div>
             <ul>
-                <li><a href="#intro">Introducción</a></li>
-                <li><a href="#pasos">Puntos Clave</a></li>
-                <li><a href="#sitios">Páginas Útiles</a></li>
-                <li><a href="#resumen">Checklist Final</a></li>
+                <li>
+                    <a href="../index.html" class="active">
+                        <span>« Volver al Dashboard</span>
+                    </a>
+                </li>
             </ul>
         </div>
+        <div class="sidebar-footer">
+            <!-- Espacio para metadatos o links secundarios del pie del menú si fuesen necesarios -->
+        </div>
+    </aside>
 
-        <article id="intro" class="antiestafa-card">
+    <!-- CONTENEDOR PRINCIPAL: Desplazado a la derecha para no solapar el menú -->
+    <main class="main-content">
+        
+        <!-- ENCABEZADO DE SECCIÓN PRINCIPAL -->
+        <header class="airline-header">
+            <div>
+                <h1 style="font-size: 1.6rem; font-weight: 700; margin: 0;">🛡️ Manual de Antiestafa</h1>
+                <p style="font-size: 0.95rem; opacity: 0.9; margin-top: 5px;">Protocolo de validación de identidad y prevención de fraude con tarjetas.</p>
+            </div>
+        </header>
+
+        <!-- ENLACES RÁPIDOS / SUBMENÚ INTERNO -->
+        <nav class="top-filter-bar">
+            <a href="#intro">Introducción</a>
+            <a href="#pasos">Puntos Clave</a>
+            <a href="#sitios">Páginas Útiles</a>
+            <a href="#resumen">Checklist Final</a>
+        </nav>
+
+        <!-- INTRODUCCIÓN (HERO SECTION) -->
+        <section id="intro" class="hero-section">
             <h2>Introducción</h2>
             <p>La validación busca asegurar que el pagador conozca la compra, tenga vínculos con los pasajeros y posea historial bancario real. Es vital verificar datos de contacto y la coherencia del grupo de viaje.</p>
-            <p style="font-size: 0.9rem; color: var(--text-dim);">Recuerda: El OK Automático puede fallar. Ante la mínima duda, se debe profundizar el análisis.</p>
-        </article>
+            <p style="margin-top: 12px;">
+                <code>Recuerda: El OK Automático puede fallar. Ante la mínima duda, se debe profundizar el análisis.</code>
+            </p>
+        </section>
 
-        <article id="pasos" class="antiestafa-card">
-            <h2>Puntos clave a validar</h2>
-            <div class="grid-validation">
-                <div class="validation-item">
-                    <h4>💳 Información Crediticia</h4>
-                    <p>Esencial corroborar que el pagador tenga historial en el sistema financiero (créditos, préstamos, tarjetas).</p>
+        <!-- PUNTOS CLAVE A VALIDAR -->
+        <section id="pasos" class="data-panel" style="margin-bottom: 25px;">
+            <div class="panel-title">
+                <span>Puntos clave a validar</span>
+            </div>
+            
+            <!-- Reutilización de la grilla auto-ajustable -->
+            <div class="grid-info-general">
+                <div class="hero-section" style="margin-bottom: 0; padding: 15px;">
+                    <h3 style="font-size: 1rem; color: var(--primary-blue); margin-bottom: 5px;">💳 Información Crediticia</h3>
+                    <p style="font-size: 0.85rem; color: #555; line-height: 1.4;">Esencial corroborar que el pagador tenga historial en el sistema financiero (créditos, préstamos, tarjetas).</p>
                 </div>
-                <div class="validation-item">
-                    <h4>📧 Correo Electrónico</h4>
-                    <p>Confirmar existencia, antigüedad y que corresponda al titular de la compra.</p>
+                <div class="hero-section" style="margin-bottom: 0; padding: 15px;">
+                    <h3 style="font-size: 1rem; color: var(--primary-blue); margin-bottom: 5px;">📧 Correo Electrónico</h3>
+                    <p style="font-size: 0.85rem; color: #555; line-height: 1.4;">Confirmar existencia, antigüedad y que corresponda al titular de la compra.</p>
                 </div>
-                <div class="validation-item">
-                    <h4>👥 Vínculos Pagador/Pax</h4>
-                    <p>Debe haber relación fehaciente por domicilio, familia o amigos.</p>
+                <div class="hero-section" style="margin-bottom: 0; padding: 15px;">
+                    <h3 style="font-size: 1rem; color: var(--primary-blue); margin-bottom: 5px;">👥 Vínculos Pagador/Pax</h3>
+                    <p style="font-size: 0.85rem; color: #555; line-height: 1.4;">Debe haber relación fehaciente por domicilio, familia o amigos.</p>
                 </div>
-                <div class="validation-item">
-                    <h4>📞 Teléfono</h4>
-                    <p>Debe ser válido y titularidad coincidente. Ante dudas, realizar validaciones adicionales.</p>
+                <div class="hero-section" style="margin-bottom: 0; padding: 15px;">
+                    <h3 style="font-size: 1rem; color: var(--primary-blue); margin-bottom: 5px;">📞 Teléfono</h3>
+                    <p style="font-size: 0.85rem; color: #555; line-height: 1.4;">Debe ser válido y titularidad coincidente. Ante dudas, realizar validaciones adicionales.</p>
                 </div>
-                <div class="validation-item">
-                    <h4>📍 Itinerario y Rutas</h4>
-                    <p>Fechas cercanas (last minute), rutas sin lógica o solo ida son señales de alerta.</p>
+                <div class="hero-section" style="margin-bottom: 0; padding: 15px;">
+                    <h3 style="font-size: 1rem; color: var(--primary-blue); margin-bottom: 5px;">📍 Itinerario y Rutas</h3>
+                    <p style="font-size: 0.85rem; color: #555; line-height: 1.4;">Fechas cercanas (last minute), rutas sin lógica o solo ida son señales de alerta.</p>
                 </div>
-                <div class="validation-item">
-                    <h4>🔍 Reservas Relacionadas</h4>
-                    <p>Revisar vínculos por mail o teléfono. <strong>Alerta:</strong> Si una misma TC arroja distintos titulares, es señal de estafa inmediata.</p>
+                <div class="hero-section" style="margin-bottom: 0; padding: 15px;">
+                    <h3 style="font-size: 1rem; color: var(--primary-blue); margin-bottom: 5px;">🔍 Reservas Relacionadas</h3>
+                    <p style="font-size: 0.85rem; color: #555; line-height: 1.4;">Revisar vínculos por mail o teléfono. <span class="badge-status badge-restrict" style="font-size:0.75rem; padding: 2px 6px;">Alerta</span> Si una misma TC arroja distintos titulares, es estafa inmediata.</p>
                 </div>
             </div>
 
-            <div class="alert-box warning" style="margin-top: 25px;">
-                <strong>Acción Preventiva:</strong> Si no logramos validar al pagador, enviar <strong>FD o Kommo</strong> usando las plantillas de validación de identidad.
+            <!-- Caja de Alerta Operativa -->
+            <div class="alert-box" style="margin-top: 25px; border-left-color: #e74c3c; background-color: var(--alert-red); color: var(--alert-red-text);">
+                <div>
+                    <strong>Acción Preventiva:</strong> Si no logramos validar al pagador, enviar <strong>FD o Kommo</strong> usando las plantillas de validación de identidad.
+                </div>
             </div>
-        </article>
+        </section>
 
-        <article id="sitios" class="antiestafa-card">
-            <h2>Páginas Útiles por País</h2>
-            <div class="tools-grid">
-                <div class="country-box">
-                    <h4>🇦🇷 Argentina</h4>
-                    <ul>
+        <!-- PÁGINAS ÚTILES POR PAÍS -->
+        <section id="sitios" class="data-panel" style="margin-bottom: 25px;">
+            <div class="panel-title">
+                <span>Páginas Útiles por País</span>
+            </div>
+            <div class="grid-info-general">
+                <div style="background: var(--bg-light); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color);">
+                    <h4 style="margin-bottom: 10px; color: var(--primary-blue);">🇦🇷 Argentina</h4>
+                    <ul class="member-list">
                         <li><strong>Nosis:</strong> Identidad, vínculos y situación crediticia.</li>
                         <li><strong>Mercado Pago:</strong> Simulación de envío para validar titularidad.</li>
                         <li><strong>Truecaller / BIN Check:</strong> Teléfonos e origen de tarjeta.</li>
                         <li><strong>EmailAge:</strong> Antigüedad del correo.</li>
                     </ul>
                 </div>
-                <div class="country-box">
-                    <h4>🇵🇪 Perú / 🇨🇱 Chile</h4>
-                    <ul>
+                <div style="background: var(--bg-light); padding: 15px; border-radius: 6px; border: 1px solid var(--border-color);">
+                    <h4 style="margin-bottom: 10px; color: var(--primary-blue);">🇵🇪 Perú / 🇨🇱 Chile</h4>
+                    <ul class="member-list">
                         <li><strong>Consultas RUC/RUT:</strong> Plataformas públicas de identidad.</li>
                         <li><strong>Truecaller:</strong> Verificación de móviles.</li>
                         <li><strong>Redes Sociales:</strong> Validación de residencia y círculo social.</li>
                     </ul>
                 </div>
             </div>
-        </article>
+        </section>
 
-        <article id="resumen" class="antiestafa-card checklist-container">
-            <h2>Resumen: ¿Cómo hacer AntiEstafa?</h2>
-            <ul class="checklist-list">
-                <li><input type="checkbox"> Ver antigüedad del mail.</li>
-                <li><input type="checkbox"> Revisar IP de compra (geolocalización).</li>
-                <li><input type="checkbox"> ¿Titular de tarjeta = Pasajero?</li>
-                <li><input type="checkbox"> ¿Datos de facturación coinciden con el pasajero?</li>
-                <li><input type="checkbox"> Verificar BIN (¿Débito o Crédito? ¿Banco?).</li>
-                <li><input type="checkbox"> Consultar Nosis / SAC.</li>
-                <li><input type="checkbox"> Verificar titularidad de teléfono.</li>
-                <li><input type="checkbox"> Analizar lógica de ITINERARIO.</li>
-                <li><input type="checkbox"> Revisar compras relacionadas históricas.</li>
+        <!-- CHECKLIST FINAL -->
+        <section id="resumen" class="data-panel">
+            <div class="panel-title">
+                <span>Resumen: ¿Cómo hacer AntiEstafa?</span>
+            </div>
+            <ul class="member-list" style="margin-left: 5px;">
+                <li style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border-color);"><input type="checkbox"> Ver antigüedad del mail.</li>
+                <li style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border-color);"><input type="checkbox"> Revisar IP de compra (geolocalización).</li>
+                <li style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border-color);"><input type="checkbox"> ¿Titular de tarjeta = Pasajero?</li>
+                <li style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border-color);"><input type="checkbox"> ¿Datos de facturación coinciden con el pasajero?</li>
+                <li style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border-color);"><input type="checkbox"> Verificar BIN (¿Débito o Crédito? ¿Banco?).</li>
+                <li style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border-color);"><input type="checkbox"> Consultar Nosis / SAC.</li>
+                <li style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border-color);"><input type="checkbox"> Verificar titularidad de teléfono.</li>
+                <li style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border-color);"><input type="checkbox"> Analizar lógica de ITINERARIO.</li>
+                <li style="display: flex; align-items: center; gap: 10px; border-bottom: none;"><input type="checkbox"> Revisar compras relacionadas históricas.</li>
             </ul>
-        </article>
-    </section>
-</main>
+        </section>
+
+        <!-- INTERN FOOTER -->
+        <footer>
+            <p>&copy; 2026 Atrápalo Ops Center - Prevención de Fraude. Todos los derechos reservados.</p>
+        </footer>
+
+    </main>
 
 </body>
 </html>
