@@ -59,6 +59,7 @@ code {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: all 0.3s ease;
 }
 
 .sidebar-header {
@@ -109,6 +110,7 @@ code {
     padding: 40px;
     width: calc(100% - 260px);
     max-width: 1300px;
+    transition: all 0.3s ease;
 }
 
 /* =====================================================================
@@ -150,6 +152,7 @@ code {
     display: flex;
     gap: 20px;
     border: 1px solid var(--border-color);
+    flex-wrap: wrap; /* Evita desbordes si hay muchos links */
 }
 
 .top-filter-bar a {
@@ -235,11 +238,20 @@ code {
 /* =====================================================================
    5. TABLAS DE CONSULTA
    ===================================================================== */
+/* Contenedor extra para que las tablas no rompan el layout en mobile */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+}
+
 .consult-table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
     font-size: 0.85rem;
+    white-space: nowrap; /* Mantiene la consistencia interna al scrollear */
 }
 
 .consult-table th, 
@@ -343,7 +355,7 @@ code {
 
 .badge-allow { 
     background: #d4efdf; 
-    color: #196f3d; 
+    color: #196f3d;
 }
 
 .badge-restrict { 
@@ -418,4 +430,81 @@ footer {
     font-size: 0.75rem;
     color: #7f8c8d;
     text-align: center;
+}
+
+/* =====================================================================
+   9. MEDIA QUERIES (RESPONSIVE)
+   ===================================================================== */
+
+/* Tablets y pantallas medianas (Menos de 992px) */
+@media (max-width: 992px) {
+    body {
+        flex-direction: column; /* Cambia a flujo vertical */
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative; /* Ya no flota fijo a la izquierda */
+        padding-top: 10px;
+    }
+
+    .sidebar-header {
+        border-bottom: none;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 10px;
+    }
+
+    .sidebar ul li a {
+        padding: 8px 15px;
+    }
+
+    .sidebar .sidebar-footer {
+        display: none; /* Ocultamos datos secundarios en menú mobile para ahorrar espacio */
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+/* Dispositivos móviles (Menos de 600px) */
+@media (max-width: 600px) {
+    .airline-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .selectors-container {
+        width: 100%;
+    }
+
+    .airline-selector {
+        width: 100%; /* El selector ocupa todo el ancho */
+    }
+
+    .grid-info-general {
+        grid-template-columns: 1fr; /* Una sola columna obligatoria */
+    }
+
+    .top-filter-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .alert-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
